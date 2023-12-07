@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Wholesome Burger Club</title>
+    <meta name="description" content="more burger, more wholesome">
+    <style>
+        @font-face {
+            font-family: 'Ticketing';
+            font-weight: normal;
+            src:    local(''),
+                    url(ticketing-webfont.woff),
+                    url(ticketing-webfont.woff2);
+            font-display: swap;
+        }
+        html {
+            width: 100%;
+            max-width: 100%;
+            min-height: 100%;
+            position: relative;
+        }
+
+        body {
+            margin: 0;
+            background-color: #FDFFFC;
+            font-size: 14px;
+            font-family: 'Ticketing',Arial, Helvetica, sans-serif;
+            font-weight: 300;
+            color: #011627;
+        }
+
+        a,
+        a:visited,
+        a:focus {
+            text-decoration: none;
+            white-space: nowrap;
+            color: #011627;
+        }
+
+        a:hover {
+            border-bottom: 1px solid #FFBF00;
+        }
+
+        .inline {
+            display: inline-block;
+        }
+
+        .container {
+            background: url(bg.jpg);
+            margin: 40px auto;
+            max-width: 320px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 5px 5px 5px #ababab;
+        }
+
+        .block {
+            border-top: 1px dashed;
+            text-align: left;
+            padding: 10px 0;
+        }
+
+        .logo {
+            text-align: center;
+            cursor: pointer;
+            font-family:Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 60px;
+            line-height: 50px;
+        }
+
+        .logo span {
+            font-size: 50px;
+        }
+
+        .address {         
+            margin-bottom: 10px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .sendoff {
+            text-align: center;
+        }
+
+        .fineprint{
+            text-align: center;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo" onclick="document.getElementById('hook').scrollIntoView({behavior: 'smooth'});">
+            WHOLE<br>
+            SOME<br>
+            BURGER<br>
+            CLUB<br>
+        </div>
+        <div class="address">
+            <div>Whereverwecandrive 16</div>
+            <div>6866WCS Wholesome</div>
+            <div><a href"mailto:receipt@wholesomeburger.club" target="_blank">receipt@wholesomeburger.club</a></div>
+        </div>
+        <div id="hook" class="">
+            <div class="block">
+                <div class="row">
+                    <div>DATE: <span id="date"></span></div><div>CHK:<span id="chk"></span></div>
+                </div>
+                <div class="row">
+                    <div>TIME: <span id="time"></span></div><div>REG:<span id="reg"></span></div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="row">
+                    <div>ITEM</div><div><span>QTY</span> <span>PRICE</span></div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="row">
+                    <div>Smash Burger</div><div><span>1</span> <span>€ XX,XX</span></div>
+                </div>
+                <div class="row">
+                <div>Double Smash Burger</div><div><span>1</span> <span>€ XX,XX</span></div>
+                </div>
+                <div class="row">
+                <div>+ EXTRA CHEESE</div><div><span>1</span> <span>€ XX,XX</span></div>
+                </div>
+                <div class="row">
+                <div>+ EXTRA BACON</div><div><span>1</span> <span>€ XX,XX</span></div>
+                </div>
+                <div class="row">
+                <div>Mahalo Burger</div><div><span>1</span> <span>€ XX,XX</span></div>
+                </div>
+                <div class="row">
+                <div>"Broodje Warm Vlees" Burger</div><div><span>1</span> <span>€ XX,XX</span></div>
+                </div>
+                <div class="row">
+                <div>Bahn-mi Burger</div><div><span>1</span> <span>€ XX,XX</span></div>
+                </div>
+                <div class="row">
+                <div>On the Lamburger</div><div><span>1</span> <span>€ XX,XX</span></div>
+                </div>
+                <div class="row">
+                <div>Samsti patty melt</div><div><span>1</span> <span>€ XX,XX</span></div>
+                </div>
+                <div class="row">
+                <div>Chopped Cheese</div><div><span>1</span> <span>€ XX,XX</span></div>
+                </div>
+            </div>
+            <div class="block sendoff">
+                <div>THANK YOU FOR CHOOSING</div>
+                <div>WHOLESOME BURGER CLUB</div>
+            </div>
+        </div>
+    </div>
+    <div class="fineprint"><a href="https://www.wholesomecinema.club" target="_blank" alt="wholesome cinema club"
+        aria-label="Site by Wholesome Cinema Club">© wholesome cinema club</a></div>
+    </div>
+
+    <script>
+        const date = new Date()
+        document.getElementById("date").innerHTML = date.toLocaleDateString('en-NL', {day: 'numeric',month: 'long', year: 'numeric'});
+        document.getElementById("time").innerHTML = date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
+        document.getElementById("chk").innerHTML = date.getSeconds()+1
+        document.getElementById("reg").innerHTML = date.getUTCMilliseconds()
+    </script>
+</body>
+
+</html>
