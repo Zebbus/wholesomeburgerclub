@@ -6,7 +6,6 @@
     <meta charset="utf-8">
     <title>Wholesome Burger Club</title>
     <meta name="description" content="more burger, more wholesome">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,600,900'">
     <style>
         @font-face {
             font-family: 'Ticketing';
@@ -14,6 +13,13 @@
             src:    local(''),
                     url(ticketing-webfont.woff),
                     url(ticketing-webfont.woff2);
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Inter Tight';
+            font-style: normal;
+            font-weight: 900;
+            src: url(inter-tight-v7-latin-900.woff2) format('woff2');
             font-display: swap;
         }
         html {
@@ -39,10 +45,11 @@
             text-decoration: none;
             white-space: nowrap;
             color: #011627;
+            cursor: pointer;
         }
 
         a:hover {
-            border-bottom: 1px solid #FFBF00;
+            border-bottom: 1px dashed;
         }
 
         .inline {
@@ -73,8 +80,7 @@
 
         .logo {
             text-align: center;
-            cursor: pointer;
-            font-family:'Inter';
+            font-family:'Inter Tight';
             font-weight: 900;
             font-size: 60px;
             line-height: 50px;
